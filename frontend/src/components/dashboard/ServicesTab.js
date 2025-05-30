@@ -21,7 +21,7 @@ const ServicesTab = () => {
         setCaptions([]); // Reset captions before generating new ones
 
         try {
-            const response = await axios.post('http://localhost:5001/api/content/generate-captions', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/content/generate-captions`, {
                 socialNetwork,
                 subject,
                 tone
@@ -50,7 +50,7 @@ const ServicesTab = () => {
         setIdeas([]); // Reset ideas before generating new ones
 
         try {
-            const response = await axios.post('http://localhost:5001/api/content/get-ideas', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/content/get-ideas`, {
                 topic
             });
 
@@ -76,7 +76,7 @@ const ServicesTab = () => {
         setCaptions([]); // Reset captions before generating new ones
 
         try {
-            const response = await axios.post('http://localhost:5001/api/content/create-captions-from-idea', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/content/create-captions-from-idea`, {
                 idea
             });
 
@@ -105,7 +105,7 @@ const ServicesTab = () => {
                 return;
             }
 
-            const response = await axios.post('http://localhost:5001/api/content/save', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/content/save`, {
                 phoneNumber,
                 topic: subject || topic || 'Untitled',
                 data: caption,

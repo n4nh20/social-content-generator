@@ -92,6 +92,12 @@ FIREBASE_SERVICE_ACCOUNT={"your-firebase-service-account-json"}
 GEMINI_API_KEY=your-gemini-api-key
 ```
 
+Tạo file `.env` trong thư mục frontend với các thông tin sau:
+
+```env
+REACT_APP_API_URL=http://localhost:5001/api
+```
+
 ## Cấu trúc thư mục
 
 ```

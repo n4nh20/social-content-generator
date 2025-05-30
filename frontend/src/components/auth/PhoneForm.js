@@ -12,7 +12,7 @@ const PhoneForm = ({ onCodeSent }) => {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:5001/api/auth/create-access-code', {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/create-access-code`, {
                 phoneNumber
             });
 

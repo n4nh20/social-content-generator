@@ -19,7 +19,7 @@ const ProfileTab = () => {
                 return;
             }
 
-            const response = await axios.get('http://localhost:5001/api/content/user-contents', {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/content/user-contents`, {
                 params: {
                     phone_number: phoneNumber
                 }
@@ -40,7 +40,7 @@ const ProfileTab = () => {
 
     const handleUnsave = async (captionId) => {
         try {
-            await axios.post('http://localhost:5001/api/content/unsave', {
+            await axios.post(`${process.env.REACT_APP_API_URL}/content/unsave`, {
                 captionId
             });
             setSavedContents(savedContents.filter(content => content.id !== captionId));
